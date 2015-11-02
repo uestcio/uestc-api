@@ -15,7 +15,7 @@ router.post('/login',
     });
 
 router.get('/detail', function(req, res, next) {
-  var token = req.param('token');
+  var token = req.query['token'];
   if(!token || !tokenMap[token]) {
     res.status(403).json('Token is invalid.');
   }
